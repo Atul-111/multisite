@@ -1,0 +1,19 @@
+<div class="guideFieldWrapper custom-input-container" 
+     id="${id}-wrapper"
+     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    
+    <label class="guideFieldLabel" for="${id}">${properties.jcr:title}</label>
+    
+    <div class="guideInputWrapper">
+        <input type="text" 
+               id="${id}" 
+               class="guideTextBox custom-js-field" 
+               name="${name}" 
+               value="${guideField.value}"
+               placeholder="${properties.placeholder || 'Type here...'}"/>
+    </div>
+
+    <div class="guideError"></div>
+</div>
+
+<sly data-sly-call="${clientlib.js @ categories='multisite.customcomponent'}"/>

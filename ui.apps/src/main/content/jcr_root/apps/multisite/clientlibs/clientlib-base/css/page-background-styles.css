@@ -1,0 +1,12 @@
+.page-bg-red {
+  background-color: #ff4d4d;
+  min-height: 100vh;
+}
+.page-bg-blue {
+  background-color: #4d79ff;
+  min-height: 100vh;
+}
+.page-bg-green {
+  background-color: #4dff88;
+  min-height: 100vh;
+}

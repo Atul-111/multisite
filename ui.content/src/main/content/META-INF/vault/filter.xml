@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/multisite" mode="merge"/>
+    <filter root="/content/multisite" mode="merge"/>
+    <filter root="/content/dam/multisite" mode="merge">
+        <exclude pattern="/content/dam/multisite(/.*)?"/>
+        <include pattern="/content/dam/multisite/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/multisite/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/multisite" mode="merge"/>
+    <filter root="/conf/multisite/settings/workflow/models"/>
+    <filter root="/conf/global/settings/workflow/launcher"/>
+    <filter root="/conf/Adaptive_Form"/>
+    <filter root="/conf/multisite/settings/wcm/policies"/>
+    <filter root="/conf/multisite/settings/wcm/policies/multisite/components/page/custom-page-policy"/>
+    <filter root="/content/cq:tags"/>
+</workspaceFilter>

@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+
+    <sly data-sly-call="${clientlib.css @ categories='multisite.af.customnumericstepper'}"/>
+
+    <sly data-sly-call="${clientlib.js @ categories='multisite.af.customnumericstepper'}"/>
+
+</sly>
+
+<div class="custom-stepper-wrapper">
+
+    <button type="button" class="stepper-btn stepper-minus">-</button>
+
+    <div class="stepper-field">
+
+        <sly data-sly-resource="${resource.path @ resourceType='fd/af/components/guidenumericbox'}"/>
+
+    </div>
+
+    <button type="button" class="stepper-btn stepper-plus">+</button>
+
+</div>

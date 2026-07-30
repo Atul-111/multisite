@@ -1,0 +1,5 @@
+{
+  "scripts": [
+    "create service user demo-service-user"
+  ]
+}

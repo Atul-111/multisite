@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:crx="http://www.day.com/crx/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <allow
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="communities-tag-admin"
+        rep:privileges="{Name}[jcr:versionManagement,jcr:read,jcr:modifyAccessControl,jcr:readAccessControl,rep:write,crx:replicate,jcr:lockManagement]"/>
+    <allow1
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="dam-replication-service"
+        rep:privileges="{Name}[crx:replicate,jcr:read,jcr:modifyAccessControl,jcr:readAccessControl,jcr:modifyProperties]"/>
+    <allow2
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="tag-administrators"
+        rep:privileges="{Name}[jcr:versionManagement,jcr:read,jcr:modifyAccessControl,jcr:readAccessControl,rep:write,crx:replicate,jcr:lockManagement]"/>
+    <allow3
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="everyone"
+        rep:privileges="{Name}[jcr:read]">
+        <rep:restrictions
+            jcr:primaryType="rep:Restrictions"
+            rep:glob=""/>
+    </allow3>
+    <allow4
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="tag-garbage-collection-service"
+        rep:privileges="{Name}[jcr:read,rep:write,crx:replicate]"/>
+    <allow5
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="tag-validation-service"
+        rep:privileges="{Name}[jcr:read]"/>
+    <allow6
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="translation-job-service"
+        rep:privileges="{Name}[jcr:read,jcr:modifyProperties]"/>
+    <allow7
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="brandportal-imsconfig-service"
+        rep:privileges="{Name}[jcr:read]"/>
+    <allow8
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="acs-commons-remote-assets-service"
+        rep:privileges="{Name}[jcr:versionManagement,jcr:read,rep:write,crx:replicate]"/>
+</jcr:root>

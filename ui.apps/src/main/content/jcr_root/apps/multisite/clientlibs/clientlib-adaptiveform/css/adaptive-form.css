@@ -1,0 +1,6 @@
+.custom-form-container {
+    background-color: yellow !important;
+    border: 5px solid red !important;
+    padding: 30px !important;
+    min-height: 300px !important;
+}

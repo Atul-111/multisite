@@ -1,0 +1,36 @@
+<sly
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.css @ categories='multisite.chatbot'}"/>
+
+<div class="multisite-chatbot" data-chat-endpoint="/bin/multisite/chat">
+    <h2>AI Chatbot</h2>
+
+    <div class="multisite-chatbot__messages">
+        <div class="multisite-chatbot__message multisite-chatbot__message--assistant">
+            Hello! Ask me anything about AEM.
+        </div>
+    </div>
+
+    <form class="multisite-chatbot__form">
+        <label for="multisite-chatbot-input" class="multisite-chatbot__label">
+            Ask something
+        </label>
+
+        <input
+            type="text"
+            id="multisite-chatbot-input"
+            class="multisite-chatbot__input"
+            aria-label="Ask something"
+            placeholder="Ask something..." />
+
+        <button
+            type="submit"
+            class="multisite-chatbot__send">
+            Send
+        </button>
+    </form>
+</div>
+
+<sly
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.js @ categories='multisite.chatbot'}"/>

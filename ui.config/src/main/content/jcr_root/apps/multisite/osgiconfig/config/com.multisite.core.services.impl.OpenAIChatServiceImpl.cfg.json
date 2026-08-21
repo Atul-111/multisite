@@ -1,0 +1,6 @@
+{
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models",
+  "model": "<YOUR_GEMINI_MODEL>",
+  "apiKey": "$[env:GEMINI_API_KEY]",
+  "timeoutSeconds": 30
+}

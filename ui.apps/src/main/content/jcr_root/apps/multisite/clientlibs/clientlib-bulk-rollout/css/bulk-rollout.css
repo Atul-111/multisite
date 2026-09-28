@@ -1,0 +1,18 @@
+#multisite-bulk-rollout-dialog .msbr-list {
+    max-height: 140px;
+    overflow: auto;
+    margin: 4px 0 12px;
+    padding-left: 18px;
+    font-family: monospace;
+    font-size: 12px;
+}
+#multisite-bulk-rollout-dialog .msbr-skipped { color: #b36b00; }
+#multisite-bulk-rollout-dialog .msbr-failed { color: #d7373f; }
+#multisite-bulk-rollout-dialog .msbr-locale { margin: 6px 0; }
+#multisite-bulk-rollout-dialog .msbr-badge {
+    margin-left: 8px;
+    padding: 1px 6px;
+    border-radius: 8px;
+    background: #e6f4ea;
+    font-size: 11px;
+}

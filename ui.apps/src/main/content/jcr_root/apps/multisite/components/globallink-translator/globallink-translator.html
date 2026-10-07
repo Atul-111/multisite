@@ -1,0 +1,32 @@
+<section class="globallink" data-globallink>
+    <header class="globallink__header">
+        <p class="globallink__eyebrow">GlobalLink</p>
+        <h1>Translator</h1>
+        <p class="globallink__intro">Choose a site page, select target languages, and create translated page copies.</p>
+    </header>
+
+    <form class="globallink__form" id="globallink-form">
+        <div class="globallink__field">
+            <label for="globallink-page">Site page</label>
+            <select id="globallink-page" name="sourcePath" required disabled>
+                <option value="">Loading site pages...</option>
+            </select>
+        </div>
+
+        <p class="globallink__source-language" id="globallink-source-language" aria-live="polite">
+            Source language is detected from the selected page.
+        </p>
+
+        <fieldset>
+            <legend>Translate into</legend>
+            <div class="globallink__languages" id="globallink-languages"></div>
+        </fieldset>
+
+        <button class="globallink__button" id="globallink-translate-button" type="submit">
+            Translate page
+        </button>
+        <p class="globallink__status" id="globallink-status" role="status" aria-live="polite">Loading site pages...</p>
+    </form>
+
+    <section class="globallink__result" id="globallink-result" aria-live="polite"></section>
+</section>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="GlobalLink Translator"
+    href="/apps/multisite/globallink-translator.html"
+    icon="globe"
+    id="multisite-globallink-translator"
+    order="{Long}1200"/>

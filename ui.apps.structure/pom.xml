@@ -47,6 +47,11 @@
                         <!-- Immutable context-aware configurations -->
                         <filter><root>/apps/settings</root></filter>
 
+                        <filter><root>/apps/cq</root></filter>
+                        <filter><root>/apps/cq/core</root></filter>
+                        <filter><root>/apps/cq/core/content</root></filter>
+                        <filter><root>/apps/cq/core/content/nav</root></filter>
+
                         <!-- DAM folder root, will be created via repoinit -->
                         <filter><root>/content/dam/multisite</root></filter>
 

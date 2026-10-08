@@ -73,6 +73,18 @@
         parent.append(list);
     }
 
+    function getTargetPagePath(sourcePath, targetLanguage) {
+        var segments = sourcePath.split("/");
+        var localeIndex = segments.length > 4 && /^(en|fr|de|es|ja|it)$/i.test(segments[4])
+            ? 4
+            : segments.length > 3 && /^(en|fr|de|es|ja|it)$/i.test(segments[3]) ? 3 : -1;
+        if (localeIndex < 0) {
+            return null;
+        }
+        segments[localeIndex] = targetLanguage.toLowerCase();
+        return segments.join("/");
+    }
+
     function renderResult(result) {
         var output = document.getElementById("globallink-result");
         output.replaceChildren();
@@ -81,7 +93,20 @@
             return entry[0].replace("|", " to ") + " -> " + entry[1];
         });
         var failures = Object.entries(result.failures || {}).map(function (entry) {
-            return entry[0].replace("|", " to ") + ": " + entry[1];
+            var details = entry[0].split("|");
+            var sourcePath = details[0];
+            var targetLanguage = details[1] || "";
+            var label = sourcePath + " to " + targetLanguage;
+            var message = entry[1] || "";
+            var targetPageMatch = message.match(/Target page:\s*(\/content\/[^|\s]+)/i);
+            if (targetPageMatch) {
+                return label + " -> " + targetPageMatch[1];
+            }
+            var targetPage = getTargetPagePath(sourcePath, targetLanguage);
+            if (targetPage) {
+                return label + " -> " + targetPage;
+            }
+            return label + ": " + message;
         });
         appendList(output, "Translated pages (" + translated.length + ")", translated);
         appendList(output, "Failed (" + failures.length + ")", failures);

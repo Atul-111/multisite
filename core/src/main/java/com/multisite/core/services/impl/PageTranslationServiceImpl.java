@@ -62,7 +62,11 @@ public class PageTranslationServiceImpl implements PageTranslationService {
                     try {
                         session.refresh(false);
                     } catch (Exception ignore) { /* no-op */ }
-                    result.addFailure(sourcePath, targetLang, e.getMessage() != null ? e.getMessage() : e.toString());
+                    String targetPathForDisplay = computeTargetPath(sourcePath,
+                            TranslationConstants.normalizeLanguage(sourceLang),
+                            TranslationConstants.normalizeLanguage(targetLang));
+                    String message = sanitizeFailureMessage(e, targetPathForDisplay);
+                    result.addFailure(sourcePath, targetLang, message);
                 }
             }
         }
@@ -138,11 +142,12 @@ public class PageTranslationServiceImpl implements PageTranslationService {
     private String computeTargetPath(String sourcePath, String sourceLang, String targetLang) {
         String[] segments = sourcePath.split("/");
         int idx = TranslationConstants.getLocalePathSegmentIndex(sourcePath);
-        if (idx < 0 || sourceLang == null || !sourceLang.equals(segments[idx])
+        if (idx < 0 || sourceLang == null
+                || !TranslationConstants.normalizeLanguage(sourceLang).equals(segments[idx].toLowerCase(java.util.Locale.ROOT))
                 || !TranslationConstants.isSupportedLanguage(targetLang) || targetLang.equals(sourceLang)) {
             return null;
         }
-        segments[idx] = targetLang;
+        segments[idx] = TranslationConstants.normalizeLanguage(targetLang);
         return String.join("/", segments);
     }
 
@@ -153,5 +158,21 @@ public class PageTranslationServiceImpl implements PageTranslationService {
             }
         }
         return false;
+    }
+
+    private String sanitizeFailureMessage(Exception e, String targetPathForDisplay) {
+        String message = e.getMessage() != null ? e.getMessage() : e.toString();
+        if (targetPathForDisplay == null) {
+            return message;
+        }
+
+        String sanitized = message == null ? "" : message.replaceAll("(?i)/content/experience-fragments/[^\\s|]+", "").trim();
+        sanitized = sanitized.replaceAll("\\s*\\|\\s*\\|\\s*", " | ");
+        sanitized = sanitized.replaceAll("^\\s*\u2014\\s*", "").trim();
+
+        if (sanitized.isEmpty()) {
+            return "Target page: " + targetPathForDisplay + " | Translation failed.";
+        }
+        return "Target page: " + targetPathForDisplay + " | " + sanitized;
     }
 }

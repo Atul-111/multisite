@@ -1,0 +1,39 @@
+<div
+    data-sly-use.model="com.multisite.core.models.ExternalizerModel"
+    class="externalizer-component">
+
+    <h2>Externalizer Practical</h2>
+
+    <hr>
+
+    <h3>Current Page</h3>
+
+    <p>
+        ${model.pagePath}
+    </p>
+
+    <h3>Author URL</h3>
+
+    <p>
+        <a href="${model.authorUrl}">
+            ${model.authorUrl}
+        </a>
+    </p>
+
+    <h3>Publish URL</h3>
+
+    <p>
+        <a href="${model.publishUrl}">
+            ${model.publishUrl}
+        </a>
+    </p>
+
+    <h3>Multisite Custom URL</h3>
+
+    <p>
+        <a href="${model.multisiteUrl}">
+            ${model.multisiteUrl}
+        </a>
+    </p>
+
+</div>

@@ -1,5 +1,6 @@
 package com.multisite.core.services.impl;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -74,7 +75,15 @@ public class LibreTranslateProvider implements TranslationProvider {
                 .timeout(Duration.ofSeconds(60))
                 .build();
 
-        HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response;
+        try {
+            response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (IOException e) {
+            throw new IllegalStateException(
+                    "Could not reach LibreTranslate. Verify the configured endpoint is reachable from AEM "
+                            + "and that the LibreTranslate service is running.",
+                    e);
+        }
         if (response.statusCode() != 200) {
             String message = getErrorMessage(response.body());
             LOG.error("LibreTranslate API error {}: {}", response.statusCode(), message);

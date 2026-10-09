@@ -73,18 +73,6 @@
         parent.append(list);
     }
 
-    function getTargetPagePath(sourcePath, targetLanguage) {
-        var segments = sourcePath.split("/");
-        var localeIndex = segments.length > 4 && /^(en|fr|de|es|ja|it)$/i.test(segments[4])
-            ? 4
-            : segments.length > 3 && /^(en|fr|de|es|ja|it)$/i.test(segments[3]) ? 3 : -1;
-        if (localeIndex < 0) {
-            return null;
-        }
-        segments[localeIndex] = targetLanguage.toLowerCase();
-        return segments.join("/");
-    }
-
     function renderResult(result) {
         var output = document.getElementById("globallink-result");
         output.replaceChildren();
@@ -98,15 +86,7 @@
             var targetLanguage = details[1] || "";
             var label = sourcePath + " to " + targetLanguage;
             var message = entry[1] || "";
-            var targetPageMatch = message.match(/Target page:\s*(\/content\/[^|\s]+)/i);
-            if (targetPageMatch) {
-                return label + " -> " + targetPageMatch[1];
-            }
-            var targetPage = getTargetPagePath(sourcePath, targetLanguage);
-            if (targetPage) {
-                return label + " -> " + targetPage;
-            }
-            return label + ": " + message;
+            return label + ": " + (message || "Translation failed. Check the AEM error log.");
         });
         appendList(output, "Translated pages (" + translated.length + ")", translated);
         appendList(output, "Failed (" + failures.length + ")", failures);

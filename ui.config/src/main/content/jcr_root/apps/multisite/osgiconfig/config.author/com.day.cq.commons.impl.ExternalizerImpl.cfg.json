@@ -1,0 +1,11 @@
+{
+    "externalizer.domains": [
+        "local http://localhost:4502",
+        "author http://localhost:4502",
+        "publish http://localhost:4503",
+        "multisite http://multisite.local"
+    ],
+    "externalizer.host": "",
+    "externalizer.contextpath": "",
+    "externalizer.encodedpath": false
+}

@@ -1,0 +1,6 @@
+﻿status,source_path,destination_path,details
+DRY_RUN_READY,/content/dam/multisite/press-releases-images/img-1.jpg,/content/dam/multisite/press-releases-images-migrated/img-1.jpg,bytes=7963855; metadata_fields=49
+DRY_RUN_READY,/content/dam/multisite/press-releases-images/img-2.jpg,/content/dam/multisite/press-releases-images-migrated/img-2.jpg,bytes=3153093; metadata_fields=14
+DRY_RUN_READY,/content/dam/multisite/press-releases-images/img-3.jpg,/content/dam/multisite/press-releases-images-migrated/img-3.jpg,bytes=553684; metadata_fields=13
+DRY_RUN_READY,/content/dam/multisite/press-releases-images/img-4.jpg,/content/dam/multisite/press-releases-images-migrated/img-4.jpg,bytes=81715; metadata_fields=13
+DRY_RUN_READY,/content/dam/multisite/press-releases-images/img-5.jpg,/content/dam/multisite/press-releases-images-migrated/img-5.jpg,bytes=3843505; metadata_fields=13

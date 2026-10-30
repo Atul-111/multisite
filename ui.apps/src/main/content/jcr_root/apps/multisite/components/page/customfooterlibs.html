@@ -14,6 +14,5 @@
     limitations under the License.
 */-->
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.js @ categories='multisite.base', async=true}"/>
+    <sly data-sly-call="${clientlib.js @ categories=['multisite.base','multisite.site'], async=true}"/>
 </sly>
-

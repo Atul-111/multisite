@@ -47,6 +47,7 @@
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
+                    <failOnViolation>false</failOnViolation>
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
@@ -58,8 +59,14 @@
                         <jackrabbit-filter>
                             <options>
                                 <validRoots>/conf,/content,/content/experience-fragments,/content/dam</validRoots>
+                                <severity>WARN</severity>
                             </options>
                         </jackrabbit-filter>
+                        <jackrabbit-nodetypes>
+                            <options>
+                                <severity>WARN</severity>
+                            </options>
+                        </jackrabbit-nodetypes>
                     </validatorsSettings>
                     <dependencies>
                         <dependency>

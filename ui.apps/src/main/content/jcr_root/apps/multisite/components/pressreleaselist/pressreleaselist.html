@@ -1,0 +1,13 @@
+<section class="cmp-prl"
+    data-cmp-prl
+    data-endpoint="/graphql/execute.json/multisite"
+    data-root-path="${properties.rootPath}"
+    data-page-size="${properties.pageSize || '10'}"
+    data-start-year="${properties.startYear || '2020'}"
+    data-default-sort="${properties.defaultSort || 'publishDate DESC'}"
+    data-heading="${properties.heading}"
+    data-categories="${properties.categories @ join=','}">
+    <div data-sly-test="${wcmmode.edit && !properties.rootPath}"
+         class="cq-placeholder"
+         data-emptytext="Press Release List: dialog me Fragment Folder Path select karein"></div>
+</section>

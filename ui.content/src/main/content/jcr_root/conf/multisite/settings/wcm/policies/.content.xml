@@ -444,6 +444,35 @@
                         </formats>
                     </paraformat>
                 </custom-page-policy>
+                <policy_custom_page
+                    jcr:description="Custom page policy for multisite templates."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Custom Page Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[multisite.dependencies,multisite.site]"
+                    clientlibsAsync="false"
+                    clientlibsJsHead="multisite.dependencies"
+                    mainContentSelector="main">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Background Color"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="page-bg-red"
+                                    cq:styleId="1783519626461"
+                                    cq:styleLabel="Red Background"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="page-bg-blue"
+                                    cq:styleId="1783519655636"
+                                    cq:styleLabel="Blue Background"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_custom_page>
             </page>
         </components>
     </multisite>

@@ -7,7 +7,9 @@
         "allowJs": true,
         "preserveConstEnums": true,
         "allowSyntheticDefaultImports": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "allowJs": true,
+        "checkJs": false
     },
     "include": [ "./src/**/*.ts" ]
 }

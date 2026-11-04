@@ -1,0 +1,7 @@
+<section class="cmp-sectionwrapper cmp-sectionwrapper--${properties.theme || 'light' @ context='attribute'}"
+         data-grid="${properties.grid || '3' @ context='attribute'}">
+    <h2 class="cmp-sectionwrapper__heading" data-sly-test="${properties.heading}">${properties.heading}</h2>
+    <div class="cmp-sectionwrapper__items">
+        <sly data-sly-resource="${resource @ resourceType='core/wcm/components/container/v1/container'}"/>
+    </div>
+</section>

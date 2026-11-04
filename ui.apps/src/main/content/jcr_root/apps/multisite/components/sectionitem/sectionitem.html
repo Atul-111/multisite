@@ -1,0 +1,11 @@
+<article class="cmp-sectionitem">
+    <img class="cmp-sectionitem__image" data-sly-test="${properties.fileReference}"
+         src="${properties.fileReference @ context='uri'}" alt="${properties.alt}"/>
+    <h3 class="cmp-sectionitem__title" data-sly-test="${properties.title}">${properties.title}</h3>
+    <p class="cmp-sectionitem__description" data-sly-test="${properties.description}">${properties.description}</p>
+    <a class="cmp-sectionitem__link" data-sly-test="${properties.linkUrl}"
+       href="${properties.linkUrl @ extension='html'}">${properties.linkText || 'Learn more'}</a>
+</article>
+<sly data-sly-test="${wcmmode.edit && !properties.title && !properties.description}">
+    <div class="cq-placeholder" data-emptytext="Section Item"></div>
+</sly>
